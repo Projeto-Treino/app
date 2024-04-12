@@ -1,0 +1,1 @@
+echo \"[Husky] pre-push\" && npm run deploy
