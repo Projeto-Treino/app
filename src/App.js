@@ -1,6 +1,7 @@
 import "./App.css";
 import { usersTreios } from "./data";
 import { useState } from "react";
+import { CollapseTrain } from "./components/collapse-train";
 
 function App() {
   const [cpf, setCpf] = useState("");
@@ -10,11 +11,8 @@ function App() {
     e.preventDefault();
     console.log("Buscando treino");
 
-    console.log(cpf);
-
     const treinos = usersTreios[cpf].treinos;
     setTreinos(treinos);
-    console.log(treinos);
   };
 
   const handleChangeInput = (event) => {
@@ -41,18 +39,7 @@ function App() {
       <div id="treinos">
         {treinos.map((treino, index) => (
           <div key={index}>
-            <h2>Treino {treino.treino}</h2>
-            <div className="cardsContainer">
-            {treino.exercicios.map((exercicio, index) => (
-              <div className="cards" key={index}>
-                <h3>Exercício: {exercicio.exercicio}</h3>
-                <p>Series: {exercicio.series}</p>
-                <p>Repetições: {exercicio.repeticoes}</p>
-                <p>Carga: {exercicio.carga}</p>
-                <a href={exercicio.link}>Link</a>
-              </div>
-            ))}
-            </div>
+            <CollapseTrain train={treino} index={index}/>
           </div>
         ))}
       </div>
