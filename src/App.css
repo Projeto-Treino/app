@@ -36,3 +36,36 @@
     transform: rotate(360deg);
   }
 }
+
+.cardsContainer {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: center;
+}
+
+.cards {
+  display: grid;
+  background: rgba(246, 246, 246, 0.99);
+  border-radius: 24px;
+  gap: 0 32px;
+  box-shadow: 4px 4px 16px 0px rgba(0, 0, 0, 0.12);
+  height: auto;
+  margin: 0;
+  width: 280px;
+  transition: transform .2s;
+  padding: 12px;
+}
+
+.cardDirection {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+
+.cards:hover {
+  transform: scale(1.05);
+}
